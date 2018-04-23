@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {background-color: powderblue;}
+        p   {display: flex;
+        justify-content:center;}
+        td    {color: navy;
+        font-size:28px;
+         }
+     </style>
+</head>
+<body>
+    <p>Tytuł filmu:</p>
+    <p th:text="${movieDetails.title}"></p>
+    <p>Opis filmu:</p>
+    <p th:text="${movieDetails.description}"></p>
+    <p>Rok Produkcji:</p>
+    <p th:text="${movieDetails.yearOfProduction}"></p>
+
+</body>
+</html>

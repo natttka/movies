@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Add Movie</title>
+    <style>
+        body {background-color: powderblue;}
+        form   {display: flex;
+        justify-content:center;
+        font-size:24px;
+        font-color:orange;}
+        button    {color: orange;
+        font-size:28px;
+         }
+         input{font-size:18px;}
+
+     </style>
+</head>
+<body>
+<form th:action="@{/add}" th:object="${movie}" method="POST">
+
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" th:field="*{title}"/></td>
+            <td th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></td>
+
+        </tr>
+        <tr>
+            <td>Year of Production:</td>
+            <td><input type="text" th:field="*{yearOfProduction}"/></td>
+            <td th:if="${#fields.hasErrors('yearOfProduction')}" th:errors="*{yearOfProduction}"></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><input type="text" th:field="*{description}"/></td>
+            <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Dodaj</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
